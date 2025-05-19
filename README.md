@@ -212,25 +212,25 @@ docker-compose exec app php artisan view:clear
 ## 🖼️ Prints do sistema
 
 ### Tela de login
-![Login](./assets/tela de login.png)
+![Login](./assets/login.png)
 
 ### Dashboard
-![Dashboard](./assets/Tela tashboard.png)
+![Dashboard](./assets/dashboard.png)
 
 ### Tela de Cadastrar um Usuário
-![Usuário](./assets/tela de cadastrar um usuário.png)
+![Usuário](./assets/cadastrar_usuário.png)
 
 ### Tela dos Detalhes de Transação
-![Transação](./assets/tela de detalhes da transação.png)
+![Transação](./assets/detalhes_transação.png)
 
 ### Tela de Depósito
-![Depósito](./assets/tela de depósito.png)
+![Depósito](./assets/depósito.png)
 
 ### Tela de Transferência
-![Transferência](./assets/tela de Transferência.png)
+![Transferência](./assets/transferência.png)
 
 ### Tela do Histórico
-![Histórico](./assets/tela do histórico.png)
+![Histórico](./assets/histórico.png)
 
 
 👨‍💻 Autor
