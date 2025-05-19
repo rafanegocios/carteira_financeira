@@ -209,6 +209,30 @@ docker-compose exec app php artisan config:clear
 docker-compose exec app php artisan cache:clear
 docker-compose exec app php artisan view:clear
 
+## 🖼️ Prints do sistema
+
+### Tela de login
+![Login](./assets/tela de login.png)
+
+### Dashboard
+![Dashboard](./assets/Tela tashboard.png)
+
+### Tela de Cadastrar um Usuário
+![Usuário](./assets/tela de cadastrar um usuário.png)
+
+### Tela dos Detalhes de Transação
+![Transação](./assets/tela de detalhes da transação.png)
+
+### Tela de Depósito
+![Depósito](./assets/tela de depósito.png)
+
+### Tela de Transferência
+![Transferência](./assets/tela de Transferência.png)
+
+### Tela do Histórico
+![Histórico](./assets/tela do histórico.png)
+
+
 👨‍💻 Autor
 Rafael Gomes de Oliveira
 
