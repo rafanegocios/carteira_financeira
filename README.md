@@ -1,61 +1,239 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+💰 Sistema de Carteira Financeira
+<p align="center"> <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"> <img src="https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"> <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"> <img src="https://img.shields.io/badge/Docker-20.10+-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License"> </p> <p align="center"> Sistema completo de carteira financeira desenvolvido em Laravel para o desafio técnico do Grupo Adriano Cobuccio. Permite o gerenciamento de depósitos, transferências e reversões de transações com segurança e integridade de dados. </p>
+🚀 Funcionalidades
+✅ Autenticação Completa: Registro e login de usuários
+✅ Depósitos: Adicione fundos à sua carteira
+✅ Transferências: Envie dinheiro para outros usuários
+✅ Validação de Saldo: Verificação automática antes de transferências
+✅ Reversão de Operações: Possibilidade de reverter qualquer transação
+✅ Histórico Completo: Visualização detalhada de todas as transações
+✅ Segurança: Proteção CSRF, validação de dados e transações SQL
+✅ Observabilidade: Logs estruturados de transações e atividades
+🛠️ Tecnologias
+Backend: PHP 8.2+, Laravel 10.x
+Banco de Dados: MySQL 8.0 / SQLite
+Frontend: Blade Templates, Tailwind CSS, Alpine.js
+Infraestrutura: Docker, Docker Compose, Nginx
+Testes: PHPUnit (Unitários e Integração)
+Arquitetura: MVC, Repository Pattern, Service Layer
+📋 Pré-requisitos
+🐳 Docker e Docker Compose
+🔧 Git
+OU
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+🐘 PHP 8.2+
+🎼 Composer
+🗄️ MySQL/SQLite
+🚀 Instalação
+Método 1: Docker (Recomendado)
+bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/carteira-financeira.git
+cd carteira-financeira
 
-## About Laravel
+# 2. Configure o ambiente
+cp .env.example .env
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 3. Inicie os containers
+docker-compose up -d
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# 4. Instale as dependências
+docker-compose exec app composer install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# 5. Gere a chave da aplicação
+docker-compose exec app php artisan key:generate
 
-## Learning Laravel
+# 6. Execute as migrações
+docker-compose exec app php artisan migrate
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# 7. Crie usuários de teste (opcional)
+docker-compose exec app php artisan db:seed --class=UserSeeder
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# 8. Acesse a aplicação
+# http://localhost:8000
+Método 2: Instalação Local
+bash
+# 1. Clone e configure
+git clone https://github.com/seu-usuario/carteira-financeira.git
+cd carteira-financeira
+cp .env.example .env
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# 2. Instale dependências
+composer install
 
-## Laravel Sponsors
+# 3. Configure o banco no .env
+# Para SQLite (mais simples):
+DB_CONNECTION=sqlite
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Para MySQL:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=carteira_financeira
+DB_USERNAME=root
+DB_PASSWORD=
 
-### Premium Partners
+# 4. Gere a chave e execute migrações
+php artisan key:generate
+php artisan migrate
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+# 5. Inicie o servidor
+php artisan serve
+🐳 Comandos Docker Úteis
+bash
+# Ver logs dos containers
+docker-compose logs -f
 
-## Contributing
+# Executar comandos Artisan
+docker-compose exec app php artisan [comando]
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Acessar o container
+docker-compose exec app bash
 
-## Code of Conduct
+# Parar containers
+docker-compose down
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Rebuild completo
+docker-compose down
+docker-compose build --no-cache
+docker-compose up -d
+🧪 Testes
+bash
+# Executar todos os testes
+docker-compose exec app php artisan test
 
-## Security Vulnerabilities
+# Testes específicos
+docker-compose exec app php artisan test --testsuite=Unit
+docker-compose exec app php artisan test --testsuite=Feature
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Com coverage (se configurado)
+docker-compose exec app php artisan test --coverage
+📊 Estrutura do Projeto
+carteira-financeira/
+├── app/
+│   ├── Http/Controllers/    # Controllers da aplicação
+│   ├── Models/             # Modelos Eloquent
+│   ├── Services/           # Lógica de negócios
+│   └── Observers/          # Observadores de eventos
+├── database/
+│   ├── migrations/         # Migrações do banco
+│   └── seeders/           # Seeds para dados de teste
+├── resources/views/        # Templates Blade
+├── routes/                 # Definição de rotas
+├── tests/                  # Testes unitários e integração
+└── docker/                 # Configurações Docker
+📱 Como Usar
+1. Registro/Login
+Acesse /register para criar uma conta
+Use /login para entrar no sistema
+2. Dashboard
+Visualize seu saldo atual
+Acesse transações recentes
+Navegue para depósitos e transferências
+3. Depósitos
+Adicione fundos à sua carteira
+Valores são adicionados imediatamente ao saldo
+4. Transferências
+Envie dinheiro usando o email do destinatário
+Sistema valida saldo e existência do usuário
+Ambos os usuários têm histórico atualizado
+5. Reversões
+Acesse detalhes de qualquer transação
+Reverta operações quando necessário
+Saldos são restaurados automaticamente
+👥 Usuários de Teste
+Se executou o seeder, use estes usuários para teste:
 
-## License
+Email	Senha	Saldo Inicial
+admin@teste.com	123456	R$ 1.000,00
+rafael@teste.com	123456	R$ 500,00
+maria@teste.com	123456	R$ 300,00
+joao@teste.com	123456	R$ 800,00
+🏗️ Arquitetura
+Padrões Utilizados
+MVC: Separação clara entre Model, View e Controller
+Service Layer: Lógica de negócios encapsulada em serviços
+Repository Pattern: Abstração da camada de dados
+Observer Pattern: Monitoramento de eventos de transações
+Princípios SOLID
+Single Responsibility: Cada classe tem uma responsabilidade
+Open/Closed: Extensível sem modificar código existente
+Liskov Substitution: Substituição de implementações
+Interface Segregation: Interfaces específicas por necessidade
+Dependency Inversion: Dependências via injeção
+🔒 Segurança
+✅ Validação de entrada de dados
+✅ Proteção contra CSRF
+✅ Hash de senhas com bcrypt
+✅ Sanitização de saídas (XSS)
+✅ Transações SQL para integridade
+✅ Autorização de ações por usuário
+📈 Observabilidade
+Logs Disponíveis
+storage/logs/transactions.log - Transações do sistema
+storage/logs/user_activity.log - Atividades dos usuários
+storage/logs/laravel.log - Logs gerais da aplicação
+Monitoramento
+Logs estruturados em JSON
+Rastreamento de transações
+Métricas de performance
+Auditoria de operações
+🤝 Contribuição
+Faça um fork do projeto
+Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
+Commit suas mudanças (git commit -m 'Add some AmazingFeature')
+Push para a branch (git push origin feature/AmazingFeature)
+Abra um Pull Request
+Padrões de Commit
+feat: nova funcionalidade
+fix: correção de bug
+docs: atualizações na documentação
+style: formatação, ponto e vírgula, etc
+refactor: refatoração de código
+test: adição ou correção de testes
+chore: tarefas de manutenção
+🐛 Solução de Problemas
+Erro de Permissões
+bash
+docker-compose exec app chown -R www-data:www-data storage bootstrap/cache
+docker-compose exec app chmod -R 775 storage bootstrap/cache
+Erro de Autoload
+bash
+docker-compose exec app composer dump-autoload
+Limpar Cache
+bash
+docker-compose exec app php artisan config:clear
+docker-compose exec app php artisan cache:clear
+docker-compose exec app php artisan view:clear
+📄 Licença
+Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para detalhes.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+👨‍💻 Autor
+Seu Nome
+
+GitHub: @seu-usuario
+LinkedIn: Seu Perfil
+Email: seu.email@exemplo.com
+🙏 Agradecimentos
+Laravel - Framework PHP
+Tailwind CSS - Framework CSS
+Alpine.js - Framework JavaScript
+Docker - Containerização
+<p align="center"> Desenvolvido com ❤️ para o desafio técnico do Grupo Adriano Cobuccio </p>
+🔗 Links Úteis
+Documentação Laravel
+Documentação Docker
+PHP The Right Way
+Tailwind CSS Docs
+📊 Status do Projeto
+Funcionalidade	Status
+Autenticação	✅ Completo
+Depósitos	✅ Completo
+Transferências	✅ Completo
+Reversões	✅ Completo
+Testes	✅ Completo
+Docker	✅ Completo
+Documentação	✅ Completo
+Logs	✅ Completo
+Nota: Este projeto foi desenvolvido como parte de um desafio técnico, implementando todas as funcionalidades solicitadas com foco em qualidade, segurança e boas práticas de desenvolvimento.
+
