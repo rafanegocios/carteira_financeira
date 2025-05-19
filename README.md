@@ -1,5 +1,5 @@
 💰 Sistema de Carteira Financeira
-<p align="center"> <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"> <img src="https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"> <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"> <img src="https://img.shields.io/badge/Docker-20.10+-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License"> </p> <p align="center"> Sistema completo de carteira financeira desenvolvido em Laravel para o desafio técnico do Grupo Adriano Cobuccio. Permite o gerenciamento de depósitos, transferências e reversões de transações com segurança e integridade de dados. </p>
+<p align="center"> <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"> <img src="https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"> <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"> <img src="https://img.shields.io/badge/Docker-20.10+-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License"> </p> <p align="center"> Sistema completo de carteira financeira desenvolvido em Laravel. Permite o gerenciamento de depósitos, transferências e reversões de transações com segurança e integridade de dados. </p>
 🚀 Funcionalidades
 ✅ Autenticação Completa: Registro e login de usuários
 ✅ Depósitos: Adicione fundos à sua carteira
@@ -141,14 +141,17 @@ Ambos os usuários têm histórico atualizado
 Acesse detalhes de qualquer transação
 Reverta operações quando necessário
 Saldos são restaurados automaticamente
+
 👥 Usuários de Teste
 Se executou o seeder, use estes usuários para teste:
-
 Email	Senha	Saldo Inicial
 admin@teste.com	123456	R$ 1.000,00
 rafael@teste.com	123456	R$ 500,00
 maria@teste.com	123456	R$ 300,00
 joao@teste.com	123456	R$ 800,00
+Mas se não rodou, você pode criar duas contas testes (para testar o
+envio e o recebimento da transação)
+
 🏗️ Arquitetura
 Padrões Utilizados
 MVC: Separação clara entre Model, View e Controller
@@ -205,21 +208,37 @@ bash
 docker-compose exec app php artisan config:clear
 docker-compose exec app php artisan cache:clear
 docker-compose exec app php artisan view:clear
-📄 Licença
-Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para detalhes.
+
+## 🖼️ Prints do sistema
+
+### Tela de login
+![Login](./assets/tela de login.png)
+
+### Dashboard
+![Dashboard](./assets/Tela tashboard.png)
+
+### Tela de Cadastrar um Usuário
+![Usuário](./assets/tela de cadastrar um usuário.png)
+
+### Tela dos Detalhes de Transação
+![Transação](./assets/tela de detalhes da transação.png)
+
+### Tela de Depósito
+![Depósito](./assets/tela de depósito.png)
+
+### Tela de Transferência
+![Transferência](./assets/tela de Transferência.png)
+
+### Tela do Histórico
+![Histórico](./assets/tela do histórico.png)
+
 
 👨‍💻 Autor
-Seu Nome
+Rafael Gomes de Oliveira
 
-GitHub: @seu-usuario
-LinkedIn: Seu Perfil
-Email: seu.email@exemplo.com
-🙏 Agradecimentos
-Laravel - Framework PHP
-Tailwind CSS - Framework CSS
-Alpine.js - Framework JavaScript
-Docker - Containerização
-<p align="center"> Desenvolvido com ❤️ para o desafio técnico do Grupo Adriano Cobuccio </p>
+GitHub: @rafanegocios
+Email: rafaelgomesneogcios@gmail.com
+
 🔗 Links Úteis
 Documentação Laravel
 Documentação Docker
